@@ -42,7 +42,7 @@ cd MesBaX
 ### 3️⃣ **Set Up Frontend**
 - Navigate to the Angular frontend folder:
   ```bash
-  cd src/MesBaX-UI
+  cd src/MBX.UI
   ```
 - Install dependencies:
   ```bash
@@ -64,7 +64,7 @@ MesBaX/
 │   ├── MBX.Infrastructure/  # Infrastructure services
 │   ├── MBX.Persistence/     # Database migrations and access
 │   ├── MBX.Server/          # ASP.NET Core Web API
-│   ├── MesBaX-UI/           # Angular frontend application
+│   ├── MBX.UI/				 # Angular frontend application
 ├── docs/                    # Project documentation
 ├── tests/                   # Project testing
 ├── LICENSE                  # License file
