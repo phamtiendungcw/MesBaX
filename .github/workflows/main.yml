@@ -1,0 +1,64 @@
+﻿name: Full Solution CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build Backend
+        run: dotnet build --no-restore
+
+      - name: Test Backend
+        run: dotnet test --no-build --verbosity normal
+
+  build-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./src/MBX.UI
+
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli@16.2.16
+      working-directory: ./src/MBX.UI
+
+    - name: Install Husky
+      run: npm install husky --save-dev
+      working-directory: ./src/MBX.UI
+
+    - name: Test Angular application
+      run: npm run test -- --watch=false --browsers=ChromeHeadless
+      working-directory: ./src/MBX.UI
+
+    - name: Build Angular application
+      run: ng build --configuration production --output-path docs --base-href /mesbax-ui/
+      working-directory: ./src/MBX.UI
