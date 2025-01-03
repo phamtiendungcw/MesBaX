@@ -10,7 +10,7 @@
 
 ## 🌟 **Key Features**
 - 🖥️ **Modern UI/UX**: Intuitive and responsive design powered by Angular.
-- ⚙️ **Scalable Back-End**: ASP.NET Core for high-performance and reliability.
+- ⚙️ **Scalable Backend**: ASP.NET Core for high-performance and reliability.
 - 🗄️ **Database Flexibility**: Supports SQL Server and Oracle Database.
 - 📦 **Comprehensive Management**: Inventory, orders, customers, and payments in one place.
 - 💳 **Secure Payment Gateway**: Integration with industry-standard payment systems.
@@ -26,7 +26,7 @@ git clone <https://github.com/phamtiendungcw/MesBaX>
 cd MesBaX
 ```
 
-### 2️⃣ **Set Up Back-End**
+### 2️⃣ **Set Up Backend**
 - Open the MesBaX.sln solution in **Visual Studio**.
 - Restore NuGet packages:
   ```bash
@@ -39,8 +39,8 @@ cd MesBaX
   ```
 - Set MBX.Server as the startup project. Then, press F5 or click the Start button (with the green play icon) to run the project.
 
-### 3️⃣ **Set Up Front-End**
-- Navigate to the Angular front-end folder:
+### 3️⃣ **Set Up Frontend**
+- Navigate to the Angular frontend folder:
   ```bash
   cd src/MesBaX-UI
   ```
@@ -64,13 +64,13 @@ MesBaX/
 │   ├── MBX.Infrastructure/  # Infrastructure services
 │   ├── MBX.Persistence/     # Database migrations and access
 │   ├── MBX.Server/          # ASP.NET Core Web API
-│   ├── MesBaX-UI/           # Angular front-end application
+│   ├── MesBaX-UI/           # Angular frontend application
 ├── docs/                    # Project documentation
 ├── tests/                   # Project testing
 ├── LICENSE                  # License file
 ├── README.md                # Project overview
 ├── CONTRIBUTING.md          # Contribute to the project
-└── MesBaX.sln			     # Solution file
+└── MesBaX.sln				 # Solution file
 ```
 
 ---
