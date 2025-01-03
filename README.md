@@ -70,7 +70,7 @@ MesBaX/
 ├── LICENSE                  # License file
 ├── README.md                # Project overview
 ├── CONTRIBUTING.md          # Contribute to the project
-└── MesBaX.sln			         # Solution file
+└── MesBaX.sln			     # Solution file
 ```
 
 ---
