@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Affiliate
+public class Affiliate : BaseEntity
 {
-    [Key] public Guid AffiliateID { get; set; } = Guid.NewGuid();
-
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;

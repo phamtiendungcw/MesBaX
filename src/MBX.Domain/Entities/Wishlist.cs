@@ -1,19 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Wishlist
+public class WishList : BaseEntity
 {
-    [Key] public Guid WishlistID { get; set; } = Guid.NewGuid();
-
-    public Guid CustomerID { get; set; }
-    public Guid ProductID { get; set; }
+    public Guid CustomerId { get; set; }
+    public Guid ProductId { get; set; }
 
     public DateTime CreateDate { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
-    [ForeignKey("CustomerID")] public virtual Customer Customer { get; set; } = null!;
+    [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
 
-    [ForeignKey("ProductID")] public virtual Product Product { get; set; } = null!;
+    [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
 }

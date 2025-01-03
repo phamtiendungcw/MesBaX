@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace MBX.Domain.Entities;
 
-public class ProductAttribute
+public class ProductAttribute : BaseEntity
 {
-    [Key] public Guid AttributeID { get; set; } = Guid.NewGuid();
-
     [Required][MaxLength(255)] public string AttributeName { get; set; } = string.Empty;
 
     // Navigation properties

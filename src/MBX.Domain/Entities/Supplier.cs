@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
-public class Supplier
+public class Supplier : BaseEntity
 {
-    [Key] public Guid SupplierID { get; set; } = Guid.NewGuid();
-
-    [Required][MaxLength(255)] public string SupplierName { get; set; } = string.Empty;
+    [Required] [MaxLength(255)] public string SupplierName { get; set; } = string.Empty;
 
     [MaxLength(255)] public string ContactName { get; set; } = string.Empty;
 

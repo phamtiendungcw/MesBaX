@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Tax
+public class Tax : BaseEntity
 {
-    [Key] public Guid TaxID { get; set; } = Guid.NewGuid();
-
     public string TaxName { get; set; } = string.Empty;
 
     [Column(TypeName = "decimal(18, 2)")] public decimal TaxRate { get; set; }

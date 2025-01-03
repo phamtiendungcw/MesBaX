@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Vendor
+public class Vendor : BaseEntity
 {
-    [Key] public Guid VendorID { get; set; } = Guid.NewGuid();
-
     public string VendorName { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;

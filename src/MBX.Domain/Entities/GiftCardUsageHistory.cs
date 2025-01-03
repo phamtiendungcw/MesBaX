@@ -1,21 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class GiftCardUsageHistory
+public class GiftCardUsageHistory : BaseEntity
 {
-    [Key] public Guid UsageID { get; set; } = Guid.NewGuid();
-
-    public Guid GiftCardID { get; set; }
-    public Guid OrderID { get; set; }
+    public Guid GiftCardId { get; set; }
+    public Guid OrderId { get; set; }
 
     [Column(TypeName = "decimal(18, 2)")] public decimal UsedAmount { get; set; }
 
     public DateTime UsedDate { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
-    [ForeignKey("GiftCardID")] public virtual GiftCard GiftCard { get; set; } = null!;
+    [ForeignKey("GiftCardId")] public virtual GiftCard GiftCard { get; set; } = null!;
 
-    [ForeignKey("OrderID")] public virtual Order Order { get; set; } = null!;
+    [ForeignKey("OrderId")] public virtual Order Order { get; set; } = null!;
 }

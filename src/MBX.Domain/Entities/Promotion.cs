@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Promotion
+public class Promotion : BaseEntity
 {
-    [Key] public Guid PromotionID { get; set; } = Guid.NewGuid();
-
     public string Code { get; set; } = string.Empty;
     public string DiscountType { get; set; } = string.Empty;
 

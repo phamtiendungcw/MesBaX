@@ -1,17 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Customer_CustomerGroup_Mapping
+public class CustomerCustomerGroupMapping : BaseEntity
 {
-    [Key] public Guid CustomerGroupMappingID { get; set; } = Guid.NewGuid();
-
-    public Guid CustomerID { get; set; }
-    public Guid GroupID { get; set; }
+    public Guid CustomerId { get; set; }
+    public Guid GroupId { get; set; }
 
     // Navigation properties
-    [ForeignKey("CustomerID")] public virtual Customer Customer { get; set; } = null!;
+    [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
 
-    [ForeignKey("GroupID")] public virtual CustomerGroup CustomerGroup { get; set; } = null!;
+    [ForeignKey("GroupId")] public virtual CustomerGroup CustomerGroup { get; set; } = null!;
 }

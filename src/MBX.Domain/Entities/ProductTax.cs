@@ -1,17 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class ProductTax
+public class ProductTax : BaseEntity
 {
-    [Key] public Guid ProductTaxID { get; set; } = Guid.NewGuid();
-
-    public Guid ProductID { get; set; }
-    public Guid TaxID { get; set; }
+    public Guid ProductId { get; set; }
+    public Guid TaxId { get; set; }
 
     // Navigation properties
-    [ForeignKey("ProductID")] public virtual Product Product { get; set; } = null!;
+    [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
 
-    [ForeignKey("TaxID")] public virtual Tax Tax { get; set; } = null!;
+    [ForeignKey("TaxId")] public virtual Tax Tax { get; set; } = null!;
 }

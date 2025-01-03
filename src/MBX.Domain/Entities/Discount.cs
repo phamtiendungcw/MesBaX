@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Discount
+public class Discount : BaseEntity
 {
-    [Key] public Guid DiscountID { get; set; } = Guid.NewGuid();
-
     public string DiscountName { get; set; } = string.Empty;
     public string DiscountType { get; set; } = string.Empty;
 
@@ -21,7 +19,7 @@ public class Discount
     [Column(TypeName = "decimal(18, 2)")] public decimal? MaximumDiscountAmount { get; set; }
 
     // Navigation properties
-    public virtual ICollection<Discount_AppliedTo_Products> DiscountAppliedToProducts { get; set; } = new List<Discount_AppliedTo_Products>();
+    public virtual ICollection<DiscountAppliedToProducts> DiscountAppliedToProducts { get; set; } = new List<DiscountAppliedToProducts>();
 
-    public virtual ICollection<Discount_AppliedTo_Categories> DiscountAppliedToCategories { get; set; } = new List<Discount_AppliedTo_Categories>();
+    public virtual ICollection<DiscountAppliedToCategories> DiscountAppliedToCategories { get; set; } = new List<DiscountAppliedToCategories>();
 }

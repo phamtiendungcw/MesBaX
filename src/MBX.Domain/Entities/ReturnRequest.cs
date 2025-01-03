@@ -1,14 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class ReturnRequest
+public class ReturnRequest : BaseEntity
 {
-    [Key] public Guid ReturnRequestID { get; set; } = Guid.NewGuid();
-
-    public Guid OrderID { get; set; }
-    public Guid ProductID { get; set; }
+    public Guid OrderId { get; set; }
+    public Guid ProductId { get; set; }
     public int Quantity { get; set; }
     public string Reason { get; set; } = string.Empty;
     public string RequestedAction { get; set; } = string.Empty;
@@ -16,7 +14,7 @@ public class ReturnRequest
     public string Status { get; set; } = string.Empty;
 
     // Navigation properties
-    [ForeignKey("OrderID")] public virtual Order Order { get; set; } = null!;
+    [ForeignKey("OrderId")] public virtual Order Order { get; set; } = null!;
 
-    [ForeignKey("ProductID")] public virtual Product Product { get; set; } = null!;
+    [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
 }

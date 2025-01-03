@@ -1,13 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class CustomerAddress
+public class CustomerAddress : BaseEntity
 {
-    [Key] public Guid AddressID { get; set; } = Guid.NewGuid();
-
-    public Guid CustomerID { get; set; }
+    public Guid CustomerId { get; set; }
     public string AddressType { get; set; } = string.Empty;
     public string AddressLine1 { get; set; } = string.Empty;
     public string AddressLine2 { get; set; } = string.Empty;
@@ -18,5 +16,5 @@ public class CustomerAddress
     public bool IsDefault { get; set; }
 
     // Navigation properties
-    [ForeignKey("CustomerID")] public virtual Customer Customer { get; set; } = null!;
+    [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
 }
