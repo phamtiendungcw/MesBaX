@@ -1,0 +1,81 @@
+﻿1. Product (Sản phẩm)
+
+2. Category (Danh mục)
+
+3. Supplier (Nhà cung cấp)
+
+4. Order (Đơn hàng)
+
+5. OrderDetail (Chi tiết đơn hàng)
+
+6. Customer (Khách hàng)
+
+7. User (Người dùng - Admin/Nhân viên)
+
+8. Role (Vai trò)
+
+9. ProductAttribute (Thuộc tính sản phẩm)
+
+10. ProductAttributeValue (Giá trị thuộc tính sản phẩm)
+
+11. Product_Attribute_Mapping (Ánh xạ sản phẩm - thuộc tính)
+
+12. Review (Đánh giá sản phẩm)
+
+13. Wishlist (Danh sách yêu thích)
+
+14. Cart (Giỏ hàng)
+
+15. CartItem (Sản phẩm trong giỏ hàng)
+
+16. InventoryTransaction (Giao dịch kho)
+
+17. Payment (Thanh toán)
+
+18. ShippingMethod (Phương thức vận chuyển)
+
+19. Promotion (Khuyến mãi)
+
+20. SocialMediaPost (Bài đăng mạng xã hội)
+
+21. AdCampaign (Chiến dịch quảng cáo)
+
+22. AdCampaignResult (Kết quả chiến dịch quảng cáo)
+
+23. CustomerAddress (Địa chỉ khách hàng)
+
+24. CustomerGroup (Nhóm khách hàng)
+
+25. Customer_CustomerGroup_Mapping (Ánh xạ khách hàng - nhóm khách hàng)
+
+26. Tax (Thuế)
+
+27. ProductTax (Thuế sản phẩm)
+
+28. Discount (Giảm giá)
+
+29. Discount_AppliedTo_Products (Ánh xạ giảm giá cho sản phẩm)
+
+30. Discount_AppliedTo_Categories (Ánh xạ giảm giá cho danh mục)
+
+31. GiftCard (Thẻ quà tặng)
+
+32. GiftCardUsageHistory (Lịch sử sử dụng thẻ quà tặng)
+
+33. ReturnRequest (Yêu cầu trả hàng)
+
+34. BlogPost (Bài đăng blog)
+
+35. BlogComment (Bình luận blog)
+
+36. NewsletterSubscription (Đăng ký nhận bản tin)
+
+37. Affiliate (Cộng tác viên)
+
+38. OrderAffiliate (Đơn hàng từ cộng tác viên)
+
+39. Vendor (Nhà bán hàng)
+
+40. VendorProduct (Sản phẩm từ nhà bán hàng)
+
+41. User_Customer_Mapping (Ánh xạ người dùng và khách hàng)
