@@ -61,7 +61,7 @@ We appreciate your interest in contributing to **MesBaX**! Whether it's fixing b
 ---
 
 ## 📝 License
-By contributing to this repository, you agree that your contributions will be licensed under the repository's [MIT License](LICENSE).
+By contributing to this repository, you agree that your contributions will be licensed under the repository's [Apache 2.0 License](LICENSE).
 
 ---
 
