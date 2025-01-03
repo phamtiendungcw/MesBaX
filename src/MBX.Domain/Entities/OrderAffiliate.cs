@@ -1,17 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class OrderAffiliate
+public class OrderAffiliate : BaseEntity
 {
-    [Key] public Guid OrderAffiliateID { get; set; } = Guid.NewGuid();
-
-    public Guid OrderID { get; set; }
-    public Guid AffiliateID { get; set; }
+    public Guid OrderId { get; set; }
+    public Guid AffiliateId { get; set; }
 
     // Navigation properties
-    [ForeignKey("OrderID")] public virtual Order Order { get; set; } = null!;
+    [ForeignKey("OrderId")] public virtual Order Order { get; set; } = null!;
 
-    [ForeignKey("AffiliateID")] public virtual Affiliate Affiliate { get; set; } = null!;
+    [ForeignKey("AffiliateId")] public virtual Affiliate Affiliate { get; set; } = null!;
 }

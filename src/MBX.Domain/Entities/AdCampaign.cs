@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class AdCampaign
+public class AdCampaign : BaseEntity
 {
-    [Key] public Guid CampaignID { get; set; } = Guid.NewGuid();
-
     public string Platform { get; set; } = string.Empty;
     public string CampaignName { get; set; } = string.Empty;
     public DateTime StartDate { get; set; } = DateTime.UtcNow;

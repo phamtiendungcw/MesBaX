@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Order
+public class Order : BaseEntity
 {
-    [Key] public Guid OrderID { get; set; } = Guid.NewGuid();
-
-    public Guid CustomerID { get; set; }
+    public Guid CustomerId { get; set; }
     public DateTime OrderDate { get; set; } = DateTime.UtcNow;
     public DateTime? ShippedDate { get; set; }
     public string ShipAddress { get; set; } = string.Empty;
@@ -23,11 +22,11 @@ public class Order
     [MaxLength(50)] public string PaymentMethod { get; set; } = string.Empty;
 
     public string PaymentStatus { get; set; } = string.Empty;
-    public string TransactionID { get; set; } = string.Empty;
+    public string TransactionId { get; set; } = string.Empty;
     public string Note { get; set; } = string.Empty;
 
     // Navigation properties
-    [ForeignKey("CustomerID")] public virtual Customer Customer { get; set; } = null!;
+    [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     public virtual ICollection<ReturnRequest> ReturnRequests { get; set; } = new List<ReturnRequest>();

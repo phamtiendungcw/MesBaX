@@ -1,17 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Discount_AppliedTo_Categories
+public class DiscountAppliedToCategories : BaseEntity
 {
-    [Key] public Guid DiscountAppliedToCategoriesID { get; set; } = Guid.NewGuid();
-
-    public Guid DiscountID { get; set; }
-    public Guid CategoryID { get; set; }
+    public Guid DiscountId { get; set; }
+    public Guid CategoryId { get; set; }
 
     // Navigation properties
-    [ForeignKey("DiscountID")] public virtual Discount Discount { get; set; } = null!;
+    [ForeignKey("DiscountId")] public virtual Discount Discount { get; set; } = null!;
 
-    [ForeignKey("CategoryID")] public virtual Category Category { get; set; } = null!;
+    [ForeignKey("CategoryId")] public virtual Category Category { get; set; } = null!;
 }

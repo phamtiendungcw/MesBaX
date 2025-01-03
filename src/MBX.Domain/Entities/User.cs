@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class User
+public class User : BaseEntity
 {
-    [Key] public Guid UserID { get; set; } = Guid.NewGuid();
-
-    public Guid RoleID { get; set; }
+    public Guid RoleId { get; set; }
 
     [Required][MaxLength(50)] public string Username { get; set; } = string.Empty;
 
@@ -23,8 +22,8 @@ public class User
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
-    [ForeignKey("RoleID")] public virtual Role Role { get; set; } = null!;
+    [ForeignKey("RoleId")] public virtual Role Role { get; set; } = null!;
 
     public virtual ICollection<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
-    public virtual ICollection<User_Customer_Mapping> UserCustomerMappings { get; set; } = new List<User_Customer_Mapping>();
+    public virtual ICollection<UserCustomerMapping> UserCustomerMappings { get; set; } = new List<UserCustomerMapping>();
 }

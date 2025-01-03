@@ -1,17 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Product
+public class Product : BaseEntity
 {
-    [Key] public Guid ProductID { get; set; } = Guid.NewGuid();
-
     [Required][MaxLength(255)] public string ProductName { get; set; } = string.Empty;
 
     public string ProductDescription { get; set; } = string.Empty;
-    public Guid CategoryID { get; set; }
-    public Guid? SupplierID { get; set; }
+    public Guid CategoryId { get; set; }
+    public Guid? SupplierId { get; set; }
 
     [Column(TypeName = "decimal(18, 2)")] public decimal UnitPrice { get; set; }
 
@@ -22,23 +21,23 @@ public class Product
     public int ReorderLevel { get; set; }
     public bool Discontinued { get; set; }
 
-    [MaxLength(50)] public string SKU { get; set; } = string.Empty;
+    [MaxLength(50)] public string Sku { get; set; } = string.Empty;
 
     public string ProductImage { get; set; } = string.Empty;
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedDate { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
-    [ForeignKey("CategoryID")] public virtual Category Category { get; set; } = null!;
+    [ForeignKey("CategoryId")] public virtual Category Category { get; set; } = null!;
 
-    [ForeignKey("SupplierID")] public virtual Supplier? Supplier { get; set; }
+    [ForeignKey("SupplierId")] public virtual Supplier? Supplier { get; set; }
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
-    public virtual ICollection<Product_Attribute_Mapping> ProductAttributeMappings { get; set; } = new List<Product_Attribute_Mapping>();
+    public virtual ICollection<ProductAttributeMapping> ProductAttributeMappings { get; set; } = new List<ProductAttributeMapping>();
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
     public virtual ICollection<ProductTax> ProductTaxes { get; set; } = new List<ProductTax>();
-    public virtual ICollection<Discount_AppliedTo_Products> DiscountAppliedToProducts { get; set; } = new List<Discount_AppliedTo_Products>();
+    public virtual ICollection<DiscountAppliedToProducts> DiscountAppliedToProducts { get; set; } = new List<DiscountAppliedToProducts>();
     public virtual ICollection<SocialMediaPost> SocialMediaPosts { get; set; } = new List<SocialMediaPost>();
     public virtual ICollection<VendorProduct> VendorProducts { get; set; } = new List<VendorProduct>();
 }

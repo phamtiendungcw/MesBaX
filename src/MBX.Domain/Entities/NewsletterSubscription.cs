@@ -1,11 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
-public class NewsletterSubscription
+public class NewsletterSubscription : BaseEntity
 {
-    [Key] public Guid SubscriptionID { get; set; } = Guid.NewGuid();
-
     public string Email { get; set; } = string.Empty;
     public DateTime SubscriptionDate { get; set; } = DateTime.UtcNow;
     public bool IsActive { get; set; }

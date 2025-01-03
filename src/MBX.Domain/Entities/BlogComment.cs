@@ -1,14 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class BlogComment
+public class BlogComment : BaseEntity
 {
-    [Key] public Guid CommentID { get; set; } = Guid.NewGuid();
-
-    public Guid PostID { get; set; }
-    public Guid? CustomerID { get; set; }
+    public Guid PostId { get; set; }
+    public Guid? CustomerId { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string CommentText { get; set; } = string.Empty;
@@ -16,7 +14,7 @@ public class BlogComment
     public bool IsApproved { get; set; }
 
     // Navigation properties
-    [ForeignKey("PostID")] public virtual BlogPost BlogPost { get; set; } = null!;
+    [ForeignKey("PostId")] public virtual BlogPost BlogPost { get; set; } = null!;
 
-    [ForeignKey("CustomerID")] public virtual Customer? Customer { get; set; }
+    [ForeignKey("CustomerId")] public virtual Customer? Customer { get; set; }
 }

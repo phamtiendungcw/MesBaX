@@ -1,18 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class ProductAttributeValue
+public class ProductAttributeValue : BaseEntity
 {
-    [Key] public Guid AttributeValueID { get; set; } = Guid.NewGuid();
-
-    public Guid AttributeID { get; set; }
+    public Guid AttributeId { get; set; }
 
     [Required][MaxLength(255)] public string Value { get; set; } = string.Empty;
 
     // Navigation properties
-    [ForeignKey("AttributeID")] public virtual ProductAttribute ProductAttribute { get; set; } = null!;
+    [ForeignKey("AttributeId")] public virtual ProductAttribute ProductAttribute { get; set; } = null!;
 
-    public virtual ICollection<Product_Attribute_Mapping> ProductAttributeMappings { get; set; } = new List<Product_Attribute_Mapping>();
+    public virtual ICollection<ProductAttributeMapping> ProductAttributeMappings { get; set; } = new List<ProductAttributeMapping>();
 }

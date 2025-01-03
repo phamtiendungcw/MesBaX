@@ -1,18 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
-public class Cart
+public class Cart : BaseEntity
 {
-    [Key] public Guid CartID { get; set; } = Guid.NewGuid();
-
-    public Guid? CustomerID { get; set; }
-    public string SessionID { get; set; } = string.Empty;
+    public Guid? CustomerId { get; set; }
+    public string SessionId { get; set; } = string.Empty;
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
-    [ForeignKey("CustomerID")] public virtual Customer? Customer { get; set; }
+    [ForeignKey("CustomerId")] public virtual Customer? Customer { get; set; }
 
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 }

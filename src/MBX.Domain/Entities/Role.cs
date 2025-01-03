@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MBX.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace MBX.Domain.Entities;
 
-public class Role
+public class Role : BaseEntity
 {
-    [Key] public Guid RoleID { get; set; } = Guid.NewGuid();
-
     [Required][MaxLength(50)] public string RoleName { get; set; } = string.Empty;
 
     public string RoleDescription { get; set; } = string.Empty;
