@@ -64,13 +64,13 @@ MesBaX/
 │   ├── MBX.Infrastructure/  # Infrastructure services
 │   ├── MBX.Persistence/     # Database migrations and access
 │   ├── MBX.Server/          # ASP.NET Core Web API
-│   ├── MBX.UI/				 # Angular frontend application
+│   ├── MBX.UI/              # Angular frontend application
 ├── docs/                    # Project documentation
 ├── tests/                   # Project testing
 ├── LICENSE                  # License file
 ├── README.md                # Project overview
 ├── CONTRIBUTING.md          # Contribute to the project
-└── MesBaX.sln				 # Solution file
+└── MesBaX.sln               # Solution file
 ```
 
 ---
