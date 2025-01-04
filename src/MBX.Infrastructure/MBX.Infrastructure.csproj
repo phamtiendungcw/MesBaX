@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MBX.Application\MBX.Application.csproj" />
-    <ProjectReference Include="..\MBX.Domain\MBX.Domain.csproj" />
+    <ProjectReference Include="..\MBX.Persistence\MBX.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
