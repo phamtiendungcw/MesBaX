@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MBX.Application\MBX.Application.csproj" />
+    <ProjectReference Include="..\MBX.Domain\MBX.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
