@@ -15,6 +15,5 @@ public class ReturnRequest : BaseEntity
 
     // Navigation properties
     [ForeignKey("OrderId")] public virtual Order Order { get; set; } = null!;
-
     [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
 }

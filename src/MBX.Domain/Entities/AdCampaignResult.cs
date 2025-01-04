@@ -9,9 +9,7 @@ public class AdCampaignResult : BaseEntity
     public int Impressions { get; set; }
     public int Clicks { get; set; }
     public int Conversions { get; set; }
-
     [Column(TypeName = "decimal(18, 2)")] public decimal Cost { get; set; }
-
     [Column(TypeName = "decimal(18, 2)")] public decimal? Roas { get; set; }
 
     // Navigation properties

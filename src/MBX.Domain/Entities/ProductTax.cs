@@ -10,6 +10,5 @@ public class ProductTax : BaseEntity
 
     // Navigation properties
     [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
-
     [ForeignKey("TaxId")] public virtual Tax Tax { get; set; } = null!;
 }

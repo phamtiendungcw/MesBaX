@@ -10,6 +10,5 @@ public class ProductAttributeMapping : BaseEntity
 
     // Navigation properties
     [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
-
     [ForeignKey("AttributeValueId")] public virtual ProductAttributeValue ProductAttributeValue { get; set; } = null!;
 }

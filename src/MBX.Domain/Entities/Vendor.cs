@@ -10,9 +10,7 @@ public class Vendor : BaseEntity
     public string Description { get; set; } = string.Empty;
     public string PhoneNumber { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
-
     [Column(TypeName = "decimal(18, 2)")] public decimal Rating { get; set; }
-
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedDate { get; set; } = DateTime.UtcNow;
 

@@ -10,6 +10,5 @@ public class VendorProduct : BaseEntity
 
     // Navigation properties
     [ForeignKey("VendorId")] public virtual Vendor Vendor { get; set; } = null!;
-
     [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
 }
