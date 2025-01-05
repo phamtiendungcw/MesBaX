@@ -15,6 +15,5 @@ public class BlogComment : BaseEntity
 
     // Navigation properties
     [ForeignKey("PostId")] public virtual BlogPost BlogPost { get; set; } = null!;
-
     [ForeignKey("CustomerId")] public virtual Customer? Customer { get; set; }
 }

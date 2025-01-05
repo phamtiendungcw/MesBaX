@@ -10,9 +10,7 @@ public class Affiliate : BaseEntity
     public string Email { get; set; } = string.Empty;
     public string PhoneNumber { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
-
     [Column(TypeName = "decimal(18, 2)")] public decimal CommissionRate { get; set; }
-
     public string AffiliateUrl { get; set; } = string.Empty;
 
     // Navigation properties

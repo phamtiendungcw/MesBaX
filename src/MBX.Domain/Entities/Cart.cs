@@ -11,6 +11,5 @@ public class Cart : BaseEntity
 
     // Navigation properties
     [ForeignKey("CustomerId")] public virtual Customer? Customer { get; set; }
-
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 }

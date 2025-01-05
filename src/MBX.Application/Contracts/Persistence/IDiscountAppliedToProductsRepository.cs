@@ -3,6 +3,6 @@ using MBX.Domain.Entities;
 
 namespace MBX.Application.Contracts.Persistence;
 
-public interface IDiscountAppliedToProductsRepository : IGenericRepository<DiscountAppliedToProducts>
+public interface IdiscountAppliedToProductsRepository : IGenericRepository<DiscountAppliedToProducts>
 {
 }

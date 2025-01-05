@@ -10,6 +10,5 @@ public class DiscountAppliedToCategories : BaseEntity
 
     // Navigation properties
     [ForeignKey("DiscountId")] public virtual Discount Discount { get; set; } = null!;
-
     [ForeignKey("CategoryId")] public virtual Category Category { get; set; } = null!;
 }

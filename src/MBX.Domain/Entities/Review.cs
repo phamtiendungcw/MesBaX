@@ -13,6 +13,5 @@ public class Review : BaseEntity
 
     // Navigation properties
     [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
-
     [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
 }

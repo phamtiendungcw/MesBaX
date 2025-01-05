@@ -10,6 +10,5 @@ public class CustomerCustomerGroupMapping : BaseEntity
 
     // Navigation properties
     [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
-
     [ForeignKey("GroupId")] public virtual CustomerGroup CustomerGroup { get; set; } = null!;
 }

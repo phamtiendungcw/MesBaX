@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using MBX.Domain.Common;
+﻿using MBX.Domain.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MBX.Domain.Entities;
 
@@ -10,6 +10,5 @@ public class UserCustomerMapping : BaseEntity
 
     // Navigation properties
     [ForeignKey("UserId")] public virtual User User { get; set; } = null!;
-
     [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
 }

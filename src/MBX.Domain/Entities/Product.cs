@@ -7,31 +7,23 @@ namespace MBX.Domain.Entities;
 public class Product : BaseEntity
 {
     [Required][MaxLength(255)] public string ProductName { get; set; } = string.Empty;
-
     public string ProductDescription { get; set; } = string.Empty;
     public Guid CategoryId { get; set; }
     public Guid? SupplierId { get; set; }
-
     [Column(TypeName = "decimal(18, 2)")] public decimal UnitPrice { get; set; }
-
     [Column(TypeName = "decimal(18, 2)")] public decimal CostPrice { get; set; }
-
     public int UnitsInStock { get; set; }
     public int UnitsOnOrder { get; set; }
     public int ReorderLevel { get; set; }
     public bool Discontinued { get; set; }
-
     [MaxLength(50)] public string Sku { get; set; } = string.Empty;
-
     public string ProductImage { get; set; } = string.Empty;
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedDate { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
     [ForeignKey("CategoryId")] public virtual Category Category { get; set; } = null!;
-
     [ForeignKey("SupplierId")] public virtual Supplier? Supplier { get; set; }
-
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
     public virtual ICollection<ProductAttributeMapping> ProductAttributeMappings { get; set; } = new List<ProductAttributeMapping>();
