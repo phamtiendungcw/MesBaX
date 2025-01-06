@@ -5,5 +5,5 @@ namespace MBX.Application.Contracts.Persistence;
 
 public interface IOrderAffiliateRepository : IGenericRepository<OrderAffiliate>
 {
-    Task<IReadOnlyList<OrderAffiliate>> GetOrderAffiliatesByAffiliateIdAsync(Guid affiliateId, int pageNumber = 1, int pageSize = 10);
+    Task<IReadOnlyList<OrderAffiliate>> GetOrderAffiliatesByAffiliateIdAsync(Guid affiliateId, int pageNumber = 1, int pageSize = 20);
 }

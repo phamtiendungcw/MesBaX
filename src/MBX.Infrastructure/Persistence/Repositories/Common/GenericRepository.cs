@@ -3,7 +3,7 @@ using MBX.Domain.Common;
 using MBX.Persistence.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 
-namespace MBX.Infrastructure.Persistence.Repositories;
+namespace MBX.Infrastructure.Persistence.Repositories.Common;
 
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
@@ -23,7 +23,11 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public async Task DeleteAsync(Guid id)
     {
         var entity = await _context.Set<T>().FindAsync(id);
-        if (entity != null) entity.IsDeleted = true;
+        if (entity != null)
+        {
+            entity.IsDeleted = true;
+            _context.Entry(entity).State = EntityState.Modified;
+        }
     }
 
     public async Task UpdateAsync(T entity)
@@ -34,7 +38,6 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
             _context.Entry(entity).State = EntityState.Modified;
     }
 
-
     public async Task<IReadOnlyList<T>> GetAllAsync(int pageNumber = 1, int pageSize = 20, bool includeDeleted = false)
     {
         var query = _context.Set<T>().AsQueryable();
@@ -43,7 +46,6 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
             .Take(pageSize)
             .ToListAsync();
     }
-
 
     public async Task<T?> GetByIdAsync(Guid id, bool includeDeleted = false)
     {
