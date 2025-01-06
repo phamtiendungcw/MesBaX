@@ -26,10 +26,13 @@ public class Product : BaseEntity
     [ForeignKey("SupplierId")] public virtual Supplier? Supplier { get; set; }
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+    public virtual ICollection<ReturnRequest> ReturnRequests { get; set; } = new List<ReturnRequest>();
     public virtual ICollection<ProductAttributeMapping> ProductAttributeMappings { get; set; } = new List<ProductAttributeMapping>();
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
     public virtual ICollection<ProductTax> ProductTaxes { get; set; } = new List<ProductTax>();
     public virtual ICollection<DiscountAppliedToProducts> DiscountAppliedToProducts { get; set; } = new List<DiscountAppliedToProducts>();
     public virtual ICollection<SocialMediaPost> SocialMediaPosts { get; set; } = new List<SocialMediaPost>();
     public virtual ICollection<VendorProduct> VendorProducts { get; set; } = new List<VendorProduct>();
+    public virtual ICollection<InventoryTransaction> InventoryTransactions { get; set; } = new List<InventoryTransaction>();
+    public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
 }

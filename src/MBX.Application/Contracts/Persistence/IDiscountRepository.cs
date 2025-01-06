@@ -3,7 +3,7 @@ using MBX.Domain.Entities;
 
 namespace MBX.Application.Contracts.Persistence;
 
-public interface IdiscountRepository : IGenericRepository<Discount>
+public interface IDiscountRepository : IGenericRepository<Discount>
 {
     Task<IReadOnlyList<Discount>> GetActiveDiscountsAsync(DateTime currentDate);
     Task<Discount> GetDiscountByNameAsync(string name);

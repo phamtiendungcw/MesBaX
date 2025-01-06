@@ -27,5 +27,6 @@ public class Order : BaseEntity
     public virtual ICollection<ReturnRequest> ReturnRequests { get; set; } = new List<ReturnRequest>();
     public virtual ICollection<GiftCardUsageHistory> GiftCardUsageHistories { get; set; } = new List<GiftCardUsageHistory>();
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
-    public virtual OrderAffiliate OrderAffiliate { get; set; } = new();
+    public virtual ICollection<OrderAffiliate> OrderAffiliates { get; set; } = new List<OrderAffiliate>();
+
 }

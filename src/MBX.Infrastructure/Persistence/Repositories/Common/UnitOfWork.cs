@@ -2,7 +2,7 @@
 using MBX.Domain.Common;
 using MBX.Persistence.DatabaseContext;
 
-namespace MBX.Infrastructure.Persistence.Repositories;
+namespace MBX.Infrastructure.Persistence.Repositories.Common;
 
 public class UnitOfWork : IUnitOfWork
 {
