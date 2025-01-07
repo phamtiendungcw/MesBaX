@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+
 using MBX.Application.DTOs;
 using MBX.Domain.Entities;
 

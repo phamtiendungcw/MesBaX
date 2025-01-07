@@ -1,6 +1,7 @@
-﻿using MBX.Domain.Common;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
@@ -11,5 +12,6 @@ public class ProductAttributeValue : BaseEntity
 
     // Navigation properties
     [ForeignKey("AttributeId")] public virtual ProductAttribute ProductAttribute { get; set; } = null!;
+
     public virtual ICollection<ProductAttributeMapping> ProductAttributeMappings { get; set; } = new List<ProductAttributeMapping>();
 }

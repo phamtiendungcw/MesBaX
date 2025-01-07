@@ -3,6 +3,7 @@ using MBX.Application.Exceptions;
 using MBX.Domain.Entities;
 using MBX.Infrastructure.Persistence.Repositories.Common;
 using MBX.Persistence.DatabaseContext;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace MBX.Infrastructure.Persistence.Repositories;

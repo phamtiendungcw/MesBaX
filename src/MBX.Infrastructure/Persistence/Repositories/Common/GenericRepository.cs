@@ -1,6 +1,7 @@
 ﻿using MBX.Application.Contracts.Persistence.Common;
 using MBX.Domain.Common;
 using MBX.Persistence.DatabaseContext;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace MBX.Infrastructure.Persistence.Repositories.Common;

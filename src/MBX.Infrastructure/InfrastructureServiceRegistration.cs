@@ -1,7 +1,10 @@
-﻿using MBX.Application.Contracts.Persistence;
+﻿using MBX.Application.Contracts.Logging;
+using MBX.Application.Contracts.Persistence;
 using MBX.Application.Contracts.Persistence.Common;
+using MBX.Infrastructure.Logging;
 using MBX.Infrastructure.Persistence.Repositories;
 using MBX.Infrastructure.Persistence.Repositories.Common;
+
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MBX.Infrastructure;
@@ -12,6 +15,7 @@ public static class InfrastructureServiceRegistration
     {
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped(typeof(IAppLogger), typeof(AppLoggerAdapter<>));
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IUserRepository, UserRepository>();

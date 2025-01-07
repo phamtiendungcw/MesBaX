@@ -1,5 +1,6 @@
-﻿using MBX.Domain.Common;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
@@ -17,5 +18,6 @@ public class Discount : BaseEntity
 
     // Navigation properties
     public virtual ICollection<DiscountAppliedToProducts> DiscountAppliedToProducts { get; set; } = new List<DiscountAppliedToProducts>();
+
     public virtual ICollection<DiscountAppliedToCategories> DiscountAppliedToCategories { get; set; } = new List<DiscountAppliedToCategories>();
 }

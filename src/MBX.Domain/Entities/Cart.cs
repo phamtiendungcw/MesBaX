@@ -1,5 +1,6 @@
-﻿using MBX.Domain.Common;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
@@ -11,5 +12,6 @@ public class Cart : BaseEntity
 
     // Navigation properties
     [ForeignKey("CustomerId")] public virtual Customer? Customer { get; set; }
+
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 }

@@ -1,6 +1,7 @@
-﻿using MBX.Domain.Common;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
@@ -23,6 +24,7 @@ public class Product : BaseEntity
 
     // Navigation properties
     [ForeignKey("CategoryId")] public virtual Category Category { get; set; } = null!;
+
     [ForeignKey("SupplierId")] public virtual Supplier? Supplier { get; set; }
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();

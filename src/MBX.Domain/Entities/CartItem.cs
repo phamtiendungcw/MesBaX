@@ -1,5 +1,6 @@
-﻿using MBX.Domain.Common;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
@@ -12,5 +13,6 @@ public class CartItem : BaseEntity
 
     // Navigation properties
     [ForeignKey("CartId")] public virtual Cart Cart { get; set; } = null!;
+
     [ForeignKey("ProductId")] public virtual Product Product { get; set; } = null!;
 }
