@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using MBX.Domain.Common;
 
@@ -16,6 +16,5 @@ public class BlogPost : BaseEntity
 
     // Navigation properties
     [ForeignKey("AuthorId")] public virtual User Author { get; set; } = null!;
-
     public virtual ICollection<BlogComment> BlogComments { get; set; } = new List<BlogComment>();
 }

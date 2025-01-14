@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using MBX.Domain.Common;
 
@@ -11,6 +11,5 @@ public class OrderAffiliate : BaseEntity
 
     // Navigation properties
     [ForeignKey("OrderId")] public virtual Order Order { get; set; } = null!;
-
     [ForeignKey("AffiliateId")] public virtual Affiliate Affiliate { get; set; } = null!;
 }

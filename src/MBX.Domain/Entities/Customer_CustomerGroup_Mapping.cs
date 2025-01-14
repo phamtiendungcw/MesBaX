@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using MBX.Domain.Common;
 
@@ -11,6 +11,5 @@ public class CustomerCustomerGroupMapping : BaseEntity
 
     // Navigation properties
     [ForeignKey("CustomerId")] public virtual Customer Customer { get; set; } = null!;
-
     [ForeignKey("GroupId")] public virtual CustomerGroup CustomerGroup { get; set; } = null!;
 }

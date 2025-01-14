@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 using MBX.Domain.Common;
@@ -18,7 +18,6 @@ public class User : BaseEntity
 
     // Navigation properties
     [ForeignKey("RoleId")] public virtual Role Role { get; set; } = null!;
-
     public virtual ICollection<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
     public virtual ICollection<UserCustomerMapping> UserCustomerMappings { get; set; } = new List<UserCustomerMapping>();
 }

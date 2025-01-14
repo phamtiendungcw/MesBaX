@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 using MBX.Domain.Common;
 
@@ -20,7 +20,6 @@ public class Customer : BaseEntity
 
     // Navigation properties
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
-
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
     public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; } = new List<CustomerAddress>();
     public virtual ICollection<CustomerCustomerGroupMapping> CustomerCustomerGroupMappings { get; set; } = new List<CustomerCustomerGroupMapping>();

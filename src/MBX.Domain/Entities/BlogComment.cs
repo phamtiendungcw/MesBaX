@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using MBX.Domain.Common;
 
@@ -16,6 +16,5 @@ public class BlogComment : BaseEntity
 
     // Navigation properties
     [ForeignKey("PostId")] public virtual BlogPost BlogPost { get; set; } = null!;
-
     [ForeignKey("CustomerId")] public virtual Customer? Customer { get; set; }
 }

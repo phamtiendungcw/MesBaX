@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using MBX.Domain.Common;
 
@@ -13,6 +13,5 @@ public class GiftCardUsageHistory : BaseEntity
 
     // Navigation properties
     [ForeignKey("GiftCardId")] public virtual GiftCard GiftCard { get; set; } = null!;
-
     [ForeignKey("OrderId")] public virtual Order Order { get; set; } = null!;
 }

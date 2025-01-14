@@ -34,14 +34,14 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public async Task UpdateAsync(T entity)
     {
         if (entity is BaseEntity baseEntity && baseEntity.Id == Guid.Empty)
-            await _context.Set<T>().AddAsync(entity); //Add new entity
+            await _context.Set<T>().AddAsync(entity);
         else
             _context.Entry(entity).State = EntityState.Modified;
     }
 
     public async Task<IReadOnlyList<T>> GetAllAsync(int pageNumber = 1, int pageSize = 20, bool includeDeleted = false)
     {
-        var query = _context.Set<T>().AsQueryable();
+        var query = _context.Set<T>().AsQueryable().AsNoTracking();
         if (!includeDeleted) query = query.Where(e => !e.IsDeleted);
         return await query.Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
@@ -50,14 +50,14 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 
     public async Task<T?> GetByIdAsync(Guid id, bool includeDeleted = false)
     {
-        var query = _context.Set<T>().AsQueryable();
+        var query = _context.Set<T>().AsQueryable().AsNoTracking();
         if (!includeDeleted) query = query.Where(e => !e.IsDeleted);
         return await query.FirstOrDefaultAsync(e => e.Id == id);
     }
 
     public async Task<bool> ExistsAsync(Guid id, bool includeDeleted = false)
     {
-        var query = _context.Set<T>().AsQueryable();
+        var query = _context.Set<T>().AsQueryable().AsNoTracking();
         if (!includeDeleted) query = query.Where(e => !e.IsDeleted);
         return await query.AnyAsync(e => e.Id == id);
     }

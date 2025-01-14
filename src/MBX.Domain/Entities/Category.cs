@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 using MBX.Domain.Common;
@@ -13,7 +13,6 @@ public class Category : BaseEntity
 
     // Navigation properties
     [ForeignKey("ParentCategoryId")] public virtual Category? ParentCategory { get; set; }
-
     public virtual ICollection<Category> SubCategories { get; set; } = new List<Category>();
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
     public virtual ICollection<DiscountAppliedToCategories> DiscountAppliedToCategories { get; set; } = new List<DiscountAppliedToCategories>();
