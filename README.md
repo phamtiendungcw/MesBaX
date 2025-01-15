@@ -1,12 +1,11 @@
 ﻿# MesBaX: Media Enhanced Sales & Business Analytics Exchange
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/phamtiendungcw/MesBaX/actions)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Build Status](https://github.com/phamtiendungcw/MesBaX/actions/workflows/main.yml/badge.svg)](https://github.com/phamtiendungcw/MesBaX/actions/workflows/main.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=phamtiendungcw_MesBaX&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=phamtiendungcw_MesBaX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 **MesBaX** is an advanced e-commerce platform that provides powerful sales and business analytics solutions, optimized by the power of media integration. The project is built on **Clean Architecture** combined with the **CQRS** pattern, using **.NET Core 6** for the backend, **Angular 16** for the frontend, and **SQL Server/Oracle** for the database.
-
-[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-dark.svg)](https://sonarcloud.io/summary/new_code?id=phamtiendungcw_MesBaX)
 
 ---
 
