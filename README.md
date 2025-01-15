@@ -6,6 +6,8 @@
 
 **MesBaX** is an advanced e-commerce platform that provides powerful sales and business analytics solutions, optimized by the power of media integration. The project is built on **Clean Architecture** combined with the **CQRS** pattern, using **.NET Core 6** for the backend, **Angular 16** for the frontend, and **SQL Server/Oracle** for the database.
 
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-dark.svg)](https://sonarcloud.io/summary/new_code?id=phamtiendungcw_MesBaX)
+
 ---
 
 ## 🌟 **Key Features**
