@@ -1,6 +1,8 @@
 ﻿using System.Linq.Expressions;
+
 using MBX.Domain.Common;
 using MBX.Domain.Entities;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -14,7 +16,6 @@ public class MbxDatabaseContext : DbContext
     {
         _logger = logger;
     }
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -136,5 +137,5 @@ public class MbxDatabaseContext : DbContext
     public DbSet<VendorProduct> VendorProducts { get; set; } = null!;
     public DbSet<UserCustomerMapping> UserCustomerMappings { get; set; } = null!;
 
-    #endregion
+    #endregion DbSet properties for each entity
 }

@@ -1,5 +1,6 @@
-﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
+
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 

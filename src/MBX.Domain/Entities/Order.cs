@@ -1,6 +1,7 @@
-﻿using MBX.Domain.Common;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
+using MBX.Domain.Common;
 
 namespace MBX.Domain.Entities;
 
@@ -28,5 +29,4 @@ public class Order : BaseEntity
     public virtual ICollection<GiftCardUsageHistory> GiftCardUsageHistories { get; set; } = new List<GiftCardUsageHistory>();
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
     public virtual ICollection<OrderAffiliate> OrderAffiliates { get; set; } = new List<OrderAffiliate>();
-
 }
