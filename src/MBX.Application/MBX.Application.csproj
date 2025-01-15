@@ -17,15 +17,4 @@
     <ProjectReference Include="..\MBX.Domain\MBX.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Customer\" />
-    <Folder Include="Features\InventoryTrasaction\" />
-    <Folder Include="Features\Cart\" />
-    <Folder Include="Features\Payment\" />
-    <Folder Include="Features\User\" />
-    <Folder Include="Features\Review\" />
-    <Folder Include="Features\Product\" />
-    <Folder Include="Features\Order\" />
-  </ItemGroup>
-
 </Project>
