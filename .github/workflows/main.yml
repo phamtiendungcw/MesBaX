@@ -88,7 +88,7 @@ jobs:
 
   sonar-analysis:
     runs-on: ubuntu-latest
-    needs: [build-backend, build-frontend] # Chạy sau khi build backend và frontend thành công
+    needs: [build-backend, build-frontend]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -97,7 +97,7 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x' # Thay đổi phiên bản .NET nếu cần
+          dotnet-version: '6.0.x'
 
       - name: Cache SonarQube Cloud packages
         uses: actions/cache@v4
@@ -125,18 +125,19 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           ./.sonar/scanner/dotnet-sonarscanner begin /k:"phamtiendungcw_MesBaX" /o:"phamtiendungcw" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build # build lại để chắc chắn rằng code được phân tích
+          dotnet build # Build lại để chắc chắn rằng code được phân tích
           ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 
   deploy:
     needs: [build-frontend]
+    if: github.ref == 'refs/heads/master'
     permissions:
       pages: write
       id-token: write
     runs-on: ubuntu-latest
     environment:
-      name: ${{ github.ref == 'refs/heads/master' && 'github-pages' || 'github-pages-staging' }}
-      url:  ${{ github.ref == 'refs/heads/master' && 'https://phamtiendungcw.github.io/MesBaX-staging/' || 'https://phamtiendungcw.github.io/MesBaX/' }}}}
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
